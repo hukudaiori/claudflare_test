@@ -8,12 +8,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// スクロール時にヘッダーの透明度を変更
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
-    } else {
-        header.style.boxShadow = 'none';
-    }
-});
+// バックグラウンドスライダーの実装
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+const slideInterval = 5000; // 切り替え間隔（ミリ秒）
+
+function nextSlide() {
+    // 現在のスライドを非アクティブに
+    slides[currentSlide].classList.remove('active');
+    // 次のスライドへ（最後なら最初に戻る）
+    currentSlide = (currentSlide + 1) % slides.length;
+    // 次のスライドをアクティブに
+    slides[currentSlide].classList.add('active');
+}
+
+// 指定間隔で繰り返す
+setInterval(nextSlide, slideInterval);
