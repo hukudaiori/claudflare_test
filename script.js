@@ -1,26 +1,47 @@
 // スムーズスクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 
-// バックグラウンドスライダーの実装
+// スライダー
 const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
-const slideInterval = 5000; // 切り替え間隔（ミリ秒）
-
-function nextSlide() {
-    // 現在のスライドを非アクティブに
+setInterval(() => {
     slides[currentSlide].classList.remove('active');
-    // 次のスライドへ（最後なら最初に戻る）
     currentSlide = (currentSlide + 1) % slides.length;
-    // 次のスライドをアクティブに
     slides[currentSlide].classList.add('active');
+}, 5000);
+
+// お知らせデータ
+const newsData = {
+    'x-opening': {
+        title: "公式X（旧Twitter）アカウントを開設しました",
+        date: "2026.04.21",
+        body: "愛好会の公式Xアカウントを開設しました。開発進捗や、コミケ等のイベント出展情報を発信していきます。<br><br><a href='https://x.com/home' target='_blank'>公式Xはこちら</a>"
+    },
+    'note-article': {
+        title: "note記事公開：愛好会の紹介及び活動方針について",
+        date: "2026.04.21",
+        body: "設立の想いや今後の活動計画についての詳細記事を公開しました。ぜひご覧ください。<br><br><a href='https://note.com/tmcit_vngame/n/n0df0a68c084d' target='_blank'>note記事を読む</a>"
+    }
+};
+
+function openModal(id) {
+    const data = newsData[id];
+    document.getElementById('modal-title').innerText = data.title;
+    document.getElementById('modal-date').innerText = data.date;
+    document.getElementById('modal-body').innerHTML = data.body;
+    document.getElementById('modal-overlay').style.display = 'block';
+    document.getElementById('news-modal').style.display = 'block';
 }
 
-// 指定間隔で繰り返す
-setInterval(nextSlide, slideInterval);
+function closeModal() {
+    document.getElementById('modal-overlay').style.display = 'none';
+    document.getElementById('news-modal').style.display = 'none';
+}
