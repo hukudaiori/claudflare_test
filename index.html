@@ -11,10 +11,11 @@
         <nav>
             <div class="logo">産技高専 美少女ゲーム愛好会</div>
             <ul>
+                <li><a href="#news">お知らせ</a></li>
                 <li><a href="#about">私たちについて</a></li>
                 <li><a href="#activities">活動内容</a></li>
                 <li><a href="#engine">エンジン開発</a></li>
-                <li><a href="#contact">お問い合わせ</a></li>
+                <li><a href="https://note.com/tmcit_vngame" target="_blank">note</a></li>
             </ul>
         </nav>
     </header>
@@ -32,44 +33,64 @@
             </div>
         </section>
 
-        <section id="about">
-            <h2>私たちについて</h2>
+        <section id="news">
             <div class="container">
+                <h2>お知らせ</h2>
+                <ul class="news-list">
+                    <li onclick="openModal('x-opening')">
+                        <span class="date">2026.04.21</span>
+                        <span class="title">公式X（旧Twitter）アカウントを開設しました</span>
+                    </li>
+                    <li onclick="openModal('note-article')">
+                        <span class="date">2026.04.21</span>
+                        <span class="title">note記事公開：愛好会の紹介及び活動方針について</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>私たちについて</h2>
                 <p>美少女ゲームを一つの「文化」として捉え、多様な視点からその価値を掘り下げる活動を行っています。</p>
                 <p>批評を通じて作品への理解を深め、技術を通じて新たな表現の基盤を構築します。</p>
             </div>
         </section>
 
         <section id="activities">
-            <h2>活動内容</h2>
-            <div class="container card-container">
-                <div class="card">
-                    <h3>批評・評論</h3>
-                    <p>作品を多角的に分析し、会誌としてまとめます。コミックマーケット等のイベントでの頒布を目標に、質の高いレビューと考察を追求します。</p>
-                </div>
-                <div class="card">
-                    <h3>会誌制作</h3>
-                    <p>メンバーの個性が光る記事を集約し、一つの作品としての「本」を作り上げます。全年齢対象の健全な文化発信を心がけています。</p>
+            <div class="container">
+                <h2>活動内容</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>批評・評論</h3>
+                        <p>作品を多角的に分析し、会誌としてまとめます。コミックマーケット等のイベントでの頒布を目標に、質の高いレビューと考察を追求します。</p>
+                    </div>
+                    <div class="card">
+                        <h3>会誌制作</h3>
+                        <p>メンバーの個性が光る記事を集約し、一つの作品としての「本」を作り上げます。全年齢対象の健全な文化発信を心がけています。</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="engine">
-            <h2>ゲームエンジン開発プロジェクト</h2>
-            <div class="container engine-content">
-                <h3>C++ ネイティブエンジン（開発中）</h3>
-                <p>既存エンジンの制約にとらわれない、高速かつ汎用的な美少女ゲームエンジンをゼロから開発中。</p>
-                <ul>
-                    <li>完全自作の描画・音声管理システム</li>
-                    <li>C++によるネイティブ実装</li>
-                    <li>オープンソース化を見据えた設計</li>
-                </ul>
+            <div class="container">
+                <h2>ゲームエンジン開発</h2>
+                <div class="engine-content">
+                    <h3>C++ ネイティブエンジン（開発中）</h3>
+                    <p>既存エンジンの制約にとらわれない、高速かつ汎用的な美少女ゲームエンジンをゼロから開発中。</p>
+                    <ul class="spec-list">
+                        <li>完全自作の描画・音声管理システム</li>
+                        <li>C++によるネイティブ実装</li>
+                        <li>オープンソース化を見据えた設計</li>
+                    </ul>
                 </div>
+            </div>
         </section>
 
         <section id="contact">
-            <h2>お問い合わせ</h2>
             <div class="container">
+                <h2>お問い合わせ</h2>
                 <p>入会希望、お問い合わせは公式XのDMまで。</p>
                 <a href="https://x.com/tmcit_vngame" class="btn">公式X (@tmcit_vngame)</a>
             </div>
@@ -77,8 +98,22 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 産技高専 美少女ゲーム愛好会</p>
+        <div class="container">
+            <p><a href="https://note.com/tmcit_vngame" target="_blank" style="color: inherit; text-decoration: none;">公式note</a> | <a href="https://x.com/tmcit_vngame" target="_blank" style="color: inherit; text-decoration: none;">公式X</a></p>
+            <p>&copy; 2026 産技高専 美少女ゲーム愛好会</p>
+        </div>
     </footer>
+
+    <div id="modal-overlay" onclick="closeModal()"></div>
+    <div id="news-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-date" class="modal-date-text"></p>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
