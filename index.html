@@ -11,29 +11,38 @@
         <nav>
             <div class="logo">産技高専 美少女ゲーム愛好会</div>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#engine">Engine</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">私たちについて</a></li>
+                <li><a href="#activities">活動内容</a></li>
+                <li><a href="#engine">エンジン開発</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <h1>美少女ゲームを、愛し、語り、創る。</h1>
-            <p>批評・評論、そしてC++によるゲームエンジン開発。</p>
+            <div class="slider">
+                <div class="slide slide1 active"></div>
+                <div class="slide slide2"></div>
+                <div class="slide slide3"></div>
+            </div>
+            <div class="hero-content">
+                <h1>美少女ゲームを、愛し、語り、創る。</h1>
+                <p>批評・評論、そしてC++によるゲームエンジン開発。</p>
+            </div>
         </section>
 
         <section id="about">
-            <h2>About</h2>
-            <p>美少女ゲームを一つの「文化」として捉え、多様な視点からその価値を掘り下げる活動を行っています。</p>
-            <p>批評を通じて作品への理解を深め、技術を通じて新たな表現の基盤を構築します。</p>
+            <h2>私たちについて</h2>
+            <div class="container">
+                <p>美少女ゲームを一つの「文化」として捉え、多様な視点からその価値を掘り下げる活動を行っています。</p>
+                <p>批評を通じて作品への理解を深め、技術を通じて新たな表現の基盤を構築します。</p>
+            </div>
         </section>
 
         <section id="activities">
-            <h2>Activities</h2>
-            <div class="card-container">
+            <h2>活動内容</h2>
+            <div class="container card-container">
                 <div class="card">
                     <h3>批評・評論</h3>
                     <p>作品を多角的に分析し、会誌としてまとめます。コミックマーケット等のイベントでの頒布を目標に、質の高いレビューと考察を追求します。</p>
@@ -46,26 +55,24 @@
         </section>
 
         <section id="engine">
-            <h2>Game Engine Project</h2>
-            <div class="engine-content">
-                <h3>C++ Native Engine (Developing)</h3>
+            <h2>ゲームエンジン開発プロジェクト</h2>
+            <div class="container engine-content">
+                <h3>C++ ネイティブエンジン（開発中）</h3>
                 <p>既存エンジンの制約にとらわれない、高速かつ汎用的な美少女ゲームエンジンをゼロから開発中。</p>
                 <ul>
                     <li>完全自作の描画・音声管理システム</li>
                     <li>C++によるネイティブ実装</li>
                     <li>オープンソース化を見据えた設計</li>
                 </ul>
-                <div class="status-bar">
-                    <span>Progress: 45%</span>
-                    <div class="progress"><div class="fill" style="width: 45%;"></div></div>
                 </div>
-            </div>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
-            <p>入会希望、お問い合わせは公式XのDMまで。</p>
-            <a href="https://x.com/tmcit_vngame" class="btn">Official X (@tmcit_vngame)</a>
+            <h2>お問い合わせ</h2>
+            <div class="container">
+                <p>入会希望、お問い合わせは公式XのDMまで。</p>
+                <a href="https://x.com/tmcit_vngame" class="btn">公式X (@tmcit_vngame)</a>
+            </div>
         </section>
     </main>
 
