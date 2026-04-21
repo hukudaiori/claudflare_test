@@ -3,22 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Homepage</title>
+    <title>産技高専 美少女ゲーム愛好会</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to Claudflare Pages Sample</h1>
-        <p>This is a sample homepage built with Claudflare Pages</p>
+        <nav>
+            <div class="logo">産技高専 美少女ゲーム愛好会</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#engine">Engine</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        <section>
-            <h2>Getting Started</h2>
-            <p>This is a basic template for your homepage on Claudflare Pages.</p>
+        <section id="hero">
+            <h1>美少女ゲームを、愛し、語り、創る。</h1>
+            <p>批評・評論、そしてC++によるゲームエンジン開発。</p>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>美少女ゲームを一つの「文化」として捉え、多様な視点からその価値を掘り下げる活動を行っています。</p>
+            <p>批評を通じて作品への理解を深め、技術を通じて新たな表現の基盤を構築します。</p>
+        </section>
+
+        <section id="activities">
+            <h2>Activities</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>批評・評論</h3>
+                    <p>作品を多角的に分析し、会誌としてまとめます。コミックマーケット等のイベントでの頒布を目標に、質の高いレビューと考察を追求します。</p>
+                </div>
+                <div class="card">
+                    <h3>会誌制作</h3>
+                    <p>メンバーの個性が光る記事を集約し、一つの作品としての「本」を作り上げます。全年齢対象の健全な文化発信を心がけています。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="engine">
+            <h2>Game Engine Project</h2>
+            <div class="engine-content">
+                <h3>C++ Native Engine (Developing)</h3>
+                <p>既存エンジンの制約にとらわれない、高速かつ汎用的な美少女ゲームエンジンをゼロから開発中。</p>
+                <ul>
+                    <li>完全自作の描画・音声管理システム</li>
+                    <li>C++によるネイティブ実装</li>
+                    <li>オープンソース化を見据えた設計</li>
+                </ul>
+                <div class="status-bar">
+                    <span>Progress: 45%</span>
+                    <div class="progress"><div class="fill" style="width: 45%;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>入会希望、お問い合わせは公式XのDMまで。</p>
+            <a href="https://x.com/tmcit_vngame" class="btn">Official X (@tmcit_vngame)</a>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2026 Sample Homepage</p>
+        <p>&copy; 2026 産技高専 美少女ゲーム愛好会</p>
     </footer>
     <script src="script.js"></script>
 </body>
