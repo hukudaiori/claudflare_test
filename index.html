@@ -40,16 +40,7 @@
         <section id="news">
             <div class="container">
                 <h2>お知らせ</h2>
-                <ul class="news-list">
-                    <li onclick="openModal('x-opening')">
-                        <span class="date">2026.04.21</span>
-                        <span class="title">公式X（旧Twitter）アカウントを開設しました</span>
-                    </li>
-                    <li onclick="openModal('note-article')">
-                        <span class="date">2026.04.21</span>
-                        <span class="title">note記事公開：愛好会の紹介及び活動方針について</span>
-                    </li>
-                </ul>
+                <ul class="news-list" id="news-list"></ul>
             </div>
         </section>
 
@@ -152,6 +143,8 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="news.js"></script>
     <script src="gate.js"></script>
     <script src="script.js"></script>
 </body>

@@ -468,4 +468,9 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border
     text-align: left;
 }
 .modal-date-text { color: var(--sub-text-color); font-size: 0.8rem; margin-bottom: 10px; }
+#modal-body { font-size: 0.95rem; line-height: 1.8; }
+#modal-body p { margin: 0 0 0.8em; }
+#modal-body a { color: var(--accent-color); }
+#modal-body ul, #modal-body ol { padding-left: 1.5em; margin: 0 0 0.8em; }
+#modal-body h1, #modal-body h2, #modal-body h3 { margin: 1em 0 0.4em; font-size: 1rem; }
 .close-btn { position: absolute; top: 10px; right: 20px; font-size: 1.5rem; cursor: pointer; }
