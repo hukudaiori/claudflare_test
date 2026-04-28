@@ -8,74 +8,53 @@
 
     document.body.style.overflow = 'hidden';
 
-    const questions = [
-        {
-            q: '「CLANNAD」「AIR」「Kanon」などで知られる、"泣きゲー"ブランドの代表格は？',
-            choices: ['ニトロプラス', 'Key', '07th Expansion'],
-            answer: 1
-        },
-        {
-            q: '「Fate/stay night」を制作したビジュアルノベルブランドは？',
-            choices: ['Leaf', 'Key', 'TYPE-MOON'],
-            answer: 2
-        },
-        {
-            q: 'ビジュアルノベルにおける「既読スキップ」とは何の機能？',
-            choices: [
-                'エンディングを自動的に飛ばす機能',
-                '一度読んだテキストを高速で読み飛ばす機能',
-                'セーブデータを自動削除する機能'
-            ],
-            answer: 1
-        }
-    ];
+    const TOTAL = 9;
+    const CORRECT = new Set([1, 2, 4, 7]);
+    const selected = new Set();
 
-    let currentQ = 0;
-    let selected = null;
+    const grid    = document.getElementById('gate-grid');
+    const errorBar = document.getElementById('gate-error');
+    const verifyBtn = document.getElementById('gate-verify-btn');
+    const card    = document.getElementById('gate-card');
 
-    const card        = document.getElementById('gate-card');
-    const questionEl  = document.getElementById('gate-question');
-    const choicesEl   = document.getElementById('gate-choices');
-    const errorEl     = document.getElementById('gate-error');
-    const nextBtn     = document.getElementById('gate-next-btn');
-    const progressTxt = document.getElementById('gate-progress-text');
-    const progressBar = document.getElementById('gate-progress-fill');
+    for (let i = 1; i <= TOTAL; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'rc-image-cell';
 
-    function render() {
-        const q = questions[currentQ];
-        selected = null;
-        errorEl.textContent = '';
-        questionEl.textContent = q.q;
-        choicesEl.innerHTML = '';
-        progressTxt.textContent = `問題 ${currentQ + 1} / ${questions.length}`;
-        progressBar.style.width = `${((currentQ + 1) / questions.length) * 100}%`;
-        nextBtn.textContent = currentQ === questions.length - 1 ? '入場する →' : '次へ →';
+        const img = document.createElement('img');
+        img.src = `mondai1/${i}.png`;
+        img.alt = '';
+        img.draggable = false;
 
-        q.choices.forEach((text, i) => {
-            const li    = document.createElement('li');
-            const radio = document.createElement('input');
-            radio.type  = 'radio';
-            radio.name  = 'gate-choice';
-            radio.id    = `gc-${i}`;
+        const check = document.createElement('div');
+        check.className = 'rc-checkmark';
+        check.textContent = '✓';
 
-            const label     = document.createElement('label');
-            label.htmlFor   = `gc-${i}`;
-            label.textContent = text;
-
-            li.appendChild(radio);
-            li.appendChild(label);
-            li.addEventListener('click', () => pick(i));
-            choicesEl.appendChild(li);
-        });
+        cell.appendChild(img);
+        cell.appendChild(check);
+        cell.addEventListener('click', () => toggle(i, cell));
+        grid.appendChild(cell);
     }
 
-    function pick(i) {
-        selected = i;
-        choicesEl.querySelectorAll('li').forEach((li, idx) => {
-            li.classList.toggle('selected', idx === i);
-            li.querySelector('input').checked = idx === i;
-        });
-        errorEl.textContent = '';
+    function toggle(idx, cell) {
+        if (selected.has(idx)) {
+            selected.delete(idx);
+            cell.classList.remove('selected');
+        } else {
+            selected.add(idx);
+            cell.classList.add('selected');
+        }
+        hideError();
+    }
+
+    function hideError() {
+        errorBar.style.display = 'none';
+        errorBar.textContent = '';
+    }
+
+    function showError(msg) {
+        errorBar.textContent = msg;
+        errorBar.style.display = 'block';
     }
 
     function shake() {
@@ -85,34 +64,26 @@
         card.addEventListener('animationend', () => card.classList.remove('shake'), { once: true });
     }
 
-    nextBtn.addEventListener('click', () => {
-        if (selected === null) {
-            errorEl.textContent = '選択肢を選んでください。';
+    verifyBtn.addEventListener('click', () => {
+        if (selected.size === 0) {
+            showError('画像を選択してください。');
             return;
         }
 
-        if (selected !== questions[currentQ].answer) {
+        const correct = selected.size === CORRECT.size &&
+            [...selected].every(i => CORRECT.has(i));
+
+        if (!correct) {
             shake();
-            errorEl.textContent = '不正解です。もう一度挑戦してください。';
-            selected = null;
-            choicesEl.querySelectorAll('li').forEach(li => {
-                li.classList.remove('selected');
-                li.querySelector('input').checked = false;
-            });
+            showError('もう一度お試しください。');
+            selected.clear();
+            document.querySelectorAll('.rc-image-cell').forEach(c => c.classList.remove('selected'));
             return;
         }
 
-        currentQ++;
-
-        if (currentQ >= questions.length) {
-            sessionStorage.setItem('gate_passed', '1');
-            document.body.style.overflow = '';
-            overlay.classList.add('passed');
-            overlay.addEventListener('animationend', () => overlay.remove(), { once: true });
-        } else {
-            render();
-        }
+        sessionStorage.setItem('gate_passed', '1');
+        document.body.style.overflow = '';
+        overlay.classList.add('passed');
+        overlay.addEventListener('animationend', () => overlay.remove(), { once: true });
     });
-
-    render();
 })();
