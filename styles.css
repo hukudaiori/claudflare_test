@@ -348,21 +348,23 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border
 /* 初心者ボタン */
 .rc-beginner-row {
     border-top: 1px solid #e0e0e0;
-    padding: 8px 10px;
+    padding: 10px;
     text-align: center;
     background: #f9f9f9;
 }
 
 .rc-beginner-btn {
     background: none;
-    border: none;
-    color: #888;
-    font-size: 0.72rem;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    color: #444;
+    font-size: 0.8rem;
+    font-weight: 600;
     cursor: pointer;
-    text-decoration: underline;
-    padding: 0;
+    padding: 6px 14px;
+    transition: background 0.2s, border-color 0.2s;
 }
-.rc-beginner-btn:hover { color: #555; }
+.rc-beginner-btn:hover { background: #eee; border-color: #777; color: #222; }
 
 /* ===== ハンバーガーボタン (デスクトップでは非表示) ===== */
 .hamburger {
