@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 48" width="320" height="48">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 56" width="320" height="56">
   <defs>
     <radialGradient id="iconBg" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#0d2040"/>
@@ -30,7 +30,9 @@
   <line x1="54" y1="10" x2="54" y2="38" stroke="#1a3a5c" stroke-width="1"/>
 
   <!-- メインテキスト -->
-  <text x="62" y="28" font-family="'Noto Sans JP', sans-serif" font-size="17" font-weight="700" fill="#ddeeff" letter-spacing="1">美少女ゲーム愛好会</text>
+  <text x="62" y="22" font-family="'Noto Sans JP', sans-serif" font-size="17" font-weight="700" fill="#0a3a6e" letter-spacing="1">美少女ゲーム愛好会</text>
   <!-- サブテキスト -->
-  <text x="63" y="40" font-family="'Courier New', monospace" font-size="8" fill="#00c8ff" opacity="0.75" letter-spacing="1.5">VISUAL NOVEL GAME CLUB</text>
+  <text x="63" y="34" font-family="'Courier New', monospace" font-size="8" fill="#0066bb" letter-spacing="1.5">VISUAL NOVEL GAME CLUB</text>
+  <!-- 学校名 -->
+  <text x="63" y="46" font-family="'Courier New', monospace" font-size="7.5" fill="#4488aa" letter-spacing="0.8">東京都立産業技術高等専門学校 / TMCIT</text>
 </svg>

@@ -40,7 +40,7 @@ header {
 
 nav { display: flex; justify-content: space-between; align-items: center; }
 .logo { display: flex; align-items: center; text-decoration: none; }
-.logo-img { height: 48px; width: auto; display: block; }
+.logo-img { height: 56px; width: auto; display: block; }
 nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
 nav ul li { margin-left: 20px; }
 nav a { color: var(--text-color); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
@@ -395,7 +395,7 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border
     /* ヘッダー・ナビ */
     header { padding: 0.75rem 5%; }
 
-    .logo-img { height: 36px; }
+    .logo-img { height: 40px; }
 
     .hamburger { display: flex; }
 
