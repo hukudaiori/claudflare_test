@@ -345,6 +345,25 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border
 }
 .rc-verify-btn:hover { background: #357abd; }
 
+/* 初心者ボタン */
+.rc-beginner-row {
+    border-top: 1px solid #e0e0e0;
+    padding: 8px 10px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.rc-beginner-btn {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 0.72rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+.rc-beginner-btn:hover { color: #555; }
+
 /* ===== ハンバーガーボタン (デスクトップでは非表示) ===== */
 .hamburger {
     display: none;

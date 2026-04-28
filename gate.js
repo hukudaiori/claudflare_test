@@ -64,6 +64,15 @@
         card.addEventListener('animationend', () => card.classList.remove('shake'), { once: true });
     }
 
+    function pass() {
+        sessionStorage.setItem('gate_passed', '1');
+        document.body.style.overflow = '';
+        overlay.classList.add('passed');
+        overlay.addEventListener('animationend', () => overlay.remove(), { once: true });
+    }
+
+    document.getElementById('gate-beginner-btn').addEventListener('click', pass);
+
     verifyBtn.addEventListener('click', () => {
         if (selected.size === 0) {
             showError('画像を選択してください。');
@@ -81,9 +90,6 @@
             return;
         }
 
-        sessionStorage.setItem('gate_passed', '1');
-        document.body.style.overflow = '';
-        overlay.classList.add('passed');
-        overlay.addEventListener('animationend', () => overlay.remove(), { once: true });
+        pass();
     });
 })();
