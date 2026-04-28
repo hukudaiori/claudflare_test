@@ -8,7 +8,6 @@
 
     document.body.style.overflow = 'hidden';
 
-    const TOTAL = 9;
     const CORRECT = new Set([1, 2, 4, 7]);
     const selected = new Set();
 
@@ -17,7 +16,13 @@
     const verifyBtn = document.getElementById('gate-verify-btn');
     const card    = document.getElementById('gate-card');
 
-    for (let i = 1; i <= TOTAL; i++) {
+    const order = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+    }
+
+    for (const i of order) {
         const cell = document.createElement('div');
         cell.className = 'rc-image-cell';
 
