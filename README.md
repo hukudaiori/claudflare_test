@@ -1,5 +1,5 @@
 # Claudflare Pages Sample
-
+test
 Claudflare Pages用のサンプルホームページです。このリポジトリをベースにしてホームページをカスタマイズできます。
 
 ## ファイル構成
