@@ -45,3 +45,37 @@ function closeModal() {
     document.getElementById('modal-overlay').style.display = 'none';
     document.getElementById('news-modal').style.display = 'none';
 }
+
+// 入部申込フォーム
+const joinForm = document.getElementById('join-form');
+const formMessage = document.getElementById('form-message');
+
+joinForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = joinForm.querySelector('.btn-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中...';
+    formMessage.hidden = true;
+    formMessage.className = 'form-message';
+
+    try {
+        const res = await fetch(joinForm.action, {
+            method: 'POST',
+            body: new FormData(joinForm),
+            headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+            formMessage.textContent = '送信しました。担当者よりご連絡をお待ちください。';
+            formMessage.classList.add('success');
+            joinForm.reset();
+        } else {
+            throw new Error();
+        }
+    } catch {
+        formMessage.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+        formMessage.classList.add('error');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信する';
+    }
+    formMessage.hidden = false;
+});
