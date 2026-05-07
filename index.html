@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>産技高専 美少女ゲーム愛好会</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo_icon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">産技高専 美少女ゲーム愛好会</div>
-            <ul>
+            <a href="#" class="logo"><img src="images/logo_header.svg" alt="産技高専 美少女ゲーム愛好会" class="logo-img"></a>
+            <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-menu">
                 <li><a href="#news">お知らせ</a></li>
                 <li><a href="#about">私たちについて</a></li>
                 <li><a href="#activities">活動内容</a></li>
@@ -37,16 +41,7 @@
         <section id="news">
             <div class="container">
                 <h2>お知らせ</h2>
-                <ul class="news-list">
-                    <li onclick="openModal('x-opening')">
-                        <span class="date">2026.04.21</span>
-                        <span class="title">公式X（旧Twitter）アカウントを開設しました</span>
-                    </li>
-                    <li onclick="openModal('note-article')">
-                        <span class="date">2026.04.21</span>
-                        <span class="title">note記事公開：愛好会の紹介及び活動方針について</span>
-                    </li>
-                </ul>
+                <ul class="news-list" id="news-list"></ul>
             </div>
         </section>
 
@@ -93,14 +88,14 @@
             <div class="container">
                 <h2>入部申込</h2>
                 <p>学校支給のメールアドレスと本名を入力して送信してください。後日、担当者よりご連絡します。</p>
-                <form id="join-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form id="join-form" action="https://formspree.io/f/mkoyzkvj" method="POST">
                     <div class="form-group">
                         <label for="fullname">本名 <span class="required">*</span></label>
                         <input type="text" id="fullname" name="name" placeholder="山田 太郎" required>
                     </div>
                     <div class="form-group">
                         <label for="school-email">学校支給メールアドレス <span class="required">*</span></label>
-                        <input type="email" id="school-email" name="email" placeholder="g12345@student.tmcit.ac.jp" required>
+                        <input type="email" id="school-email" name="email" placeholder="m11111@g.metro-cit.ac.jp" required>
                     </div>
                     <div id="form-message" class="form-message" hidden></div>
                     <button type="submit" class="btn btn-submit">送信する</button>
@@ -134,6 +129,43 @@
         </div>
     </div>
 
+    <div id="gate-overlay">
+        <div id="gate-card">
+            <div class="rc-header">
+                <div class="rc-header-text">
+                    <div class="rc-header-inst">すべての画像を選択してください</div>
+                    <div class="rc-header-cat">むりりん先生が原画を担当した<br>キャラクター</div>
+                </div>
+                <button class="rc-refresh-btn" aria-label="更新" title="更新" disabled>↺</button>
+            </div>
+            <div id="gate-grid" class="rc-image-grid"></div>
+            <div id="gate-error" class="rc-error-bar"></div>
+            <div class="rc-footer">
+                <div class="rc-branding">
+                    <svg class="rc-logo-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="22" fill="#4285f4"/>
+                        <g fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="30,17 35,21 30,25"/>
+                            <polyline points="30,17 35,21 30,25" transform="rotate(120 24 24)"/>
+                            <polyline points="30,17 35,21 30,25" transform="rotate(240 24 24)"/>
+                        </g>
+                    </svg>
+                    <div class="rc-brand-info">
+                        <span class="rc-brand-name">reCAPTCHA</span>
+                        <span class="rc-brand-links">プライバシー・利用規約</span>
+                    </div>
+                </div>
+                <button id="gate-verify-btn" class="rc-verify-btn">確認</button>
+            </div>
+            <div class="rc-beginner-row">
+                <button id="gate-beginner-btn" class="rc-beginner-btn">私は美少女ゲーム初心者です</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="news.js"></script>
+    <script src="gate.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

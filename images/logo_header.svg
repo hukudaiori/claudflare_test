@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 56" width="320" height="56">
+  <defs>
+    <radialGradient id="iconBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0d2040"/>
+      <stop offset="100%" stop-color="#06101e"/>
+    </radialGradient>
+  </defs>
+
+  <!-- アイコン背景 -->
+  <rect x="0" y="2" width="44" height="44" rx="10" fill="url(#iconBg)"/>
+
+  <!-- コーナーアクセント -->
+  <polyline points="4,12 4,4 12,4"    fill="none" stroke="#00ffc8" stroke-width="1.6" stroke-linecap="round"/>
+  <polyline points="32,4 40,4 40,12"  fill="none" stroke="#00ffc8" stroke-width="1.6" stroke-linecap="round"/>
+  <polyline points="4,36 4,44 12,44"  fill="none" stroke="#00ffc8" stroke-width="1.6" stroke-linecap="round"/>
+  <polyline points="32,44 40,44 40,36" fill="none" stroke="#00ffc8" stroke-width="1.6" stroke-linecap="round"/>
+
+  <!-- モニター本体 -->
+  <rect x="7" y="11" width="30" height="20" rx="2.5" fill="#08111e" stroke="#4dc8ff" stroke-width="1.2"/>
+  <!-- 画面 -->
+  <rect x="10" y="14" width="24" height="14" rx="1.5" fill="#040c18"/>
+  <!-- 画面内テキスト -->
+  <text x="22" y="20" text-anchor="middle" font-family="'Courier New',monospace" font-size="4.5" fill="#5ed4ff">&gt;VN_</text>
+  <text x="22" y="26" text-anchor="middle" font-family="'Courier New',monospace" font-size="4" fill="#ffb0d8">■■□</text>
+  <!-- スタンド -->
+  <line x1="22" y1="31" x2="22" y2="37" stroke="#4dc8ff" stroke-width="1.2"/>
+  <line x1="14" y1="37" x2="30" y2="37" stroke="#4dc8ff" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- 区切りライン -->
+  <line x1="54" y1="10" x2="54" y2="38" stroke="#1a3a5c" stroke-width="1"/>
+
+  <!-- メインテキスト -->
+  <text x="62" y="22" font-family="'Noto Sans JP', sans-serif" font-size="17" font-weight="700" fill="#0a3a6e" letter-spacing="1">美少女ゲーム愛好会</text>
+  <!-- サブテキスト -->
+  <text x="63" y="34" font-family="'Courier New', monospace" font-size="8" fill="#0066bb" letter-spacing="1.5">VISUAL NOVEL GAME CLUB</text>
+  <!-- 学校名 -->
+  <text x="63" y="46" font-family="'Courier New', monospace" font-size="7.5" fill="#4488aa" letter-spacing="0.8">東京都立産業技術高等専門学校 / TMCIT</text>
+</svg>

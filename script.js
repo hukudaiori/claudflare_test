@@ -1,3 +1,22 @@
+// ハンバーガーメニュー
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// メニュー項目クリック時に閉じる
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+    });
+});
+
 // スムーズスクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -65,6 +84,7 @@ joinForm.addEventListener('submit', async (e) => {
             headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
+            submitBtn.textContent = '送信しました';
             formMessage.textContent = '送信しました。担当者よりご連絡をお待ちください。';
             formMessage.classList.add('success');
             joinForm.reset();
