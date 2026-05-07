@@ -10,14 +10,14 @@
 const NEWS = [
   {
     date: "2026.04.21",
-    title: "公式X（旧Twitter）アカウントを開設しました",
+    title: "Xアカウントを開設しました",
     body: `
-愛好会の公式Xアカウントを開設しました。
+愛好会のXアカウントを開設しました。
 
 開発進捗や、コミケ等のイベント出展情報を発信していきます。
 フォローよろしくお願いします。
 
-[公式X @tmcit_vngame](https://x.com/tmcit_vngame)
+[X @tmcit_vngame](https://x.com/tmcit_vngame)
     `.trim()
   },
   {

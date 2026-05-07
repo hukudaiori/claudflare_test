@@ -40,9 +40,9 @@ setInterval(() => {
 // お知らせデータ
 const newsData = {
     'x-opening': {
-        title: "公式X（旧Twitter）アカウントを開設しました",
+        title: "Xアカウントを開設しました",
         date: "2026.04.21",
-        body: "愛好会の公式Xアカウントを開設しました。開発進捗や、コミケ等のイベント出展情報を発信していきます。<br><br><a href='https://x.com/home' target='_blank'>公式Xはこちら</a>"
+        body: "愛好会のXアカウントを開設しました。開発進捗や、コミケ等のイベント出展情報を発信していきます。<br><br><a href='https://x.com/home' target='_blank'>Xアカウントはこちら</a>"
     },
     'note-article': {
         title: "note記事公開：愛好会の紹介及び活動方針について",
